@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -14,7 +15,16 @@ export default function Footer() {
       <div className={styles.footerContainer}>
         {/* Brand details */}
         <div className={styles.brandCol}>
-          <span className={styles.logoText}>HEALAX</span>
+          <div className={styles.logoContainer}>
+            <Image
+              src="/logo.jpg"
+              alt="Healax Logo"
+              width={34}
+              height={34}
+              style={{ borderRadius: "5px", objectFit: "cover" }}
+            />
+            <span className={styles.logoText}>HEALAX</span>
+          </div>
           <p className={styles.brandDesc}>
             Integrating state-of-the-art biochemistry and modern medical engineering to deliver premium, effective therapeutic solutions worldwide.
           </p>

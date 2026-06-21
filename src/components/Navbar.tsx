@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 
@@ -39,10 +40,17 @@ export default function Navbar() {
     <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}>
       <div className={styles.navContainer}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoTitle}>
-            HEALAX
-          </span>
-          <span className={styles.logoSub}>Pharma</span>
+          <Image
+            src="/logo.jpg"
+            alt="Healax Logo"
+            width={38}
+            height={38}
+            style={{ borderRadius: "6px", objectFit: "cover" }}
+          />
+          <div className={styles.logoText}>
+            <span className={styles.logoTitle}>HEALAX</span>
+            <span className={styles.logoSub}>Pharma</span>
+          </div>
         </Link>
 
         {/* Desktop Menu */}
