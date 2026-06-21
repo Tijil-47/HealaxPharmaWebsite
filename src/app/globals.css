@@ -1,23 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors & Backgrounds */
+  --background-rgb: 5, 8, 18; /* #050812 - Deep cosmic black */
+  --background: rgb(var(--background-rgb));
+  
+  --foreground-rgb: 243, 244, 246; /* #f3f4f6 - Light grey text */
+  --foreground: rgb(var(--foreground-rgb));
+  
+  --foreground-muted: #9ca3af; /* #9ca3af - Secondary text */
+  
+  --surface-rgb: 13, 18, 36; /* #0d1224 - Dark surface */
+  --surface: rgb(var(--surface-rgb));
+  
+  --surface-hover: #18203d;
+  
+  /* Primary Healing/Bio Accents */
+  --primary-cyan: #00f2fe;
+  --primary-emerald: #10b981;
+  --accent-indigo: #6366f1;
+  --accent-violet: #8b5cf6;
+  
+  /* Premium Gradients */
+  --gradient-healing: linear-gradient(135deg, var(--primary-cyan) 0%, var(--primary-emerald) 100%);
+  --gradient-science: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-violet) 100%);
+  --gradient-text: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+  --gradient-accent-text: linear-gradient(135deg, var(--primary-cyan) 0%, var(--accent-violet) 100%);
+  
+  /* Borders & Glassmorphism */
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-hover: rgba(255, 255, 255, 0.16);
+  --glass-bg: rgba(13, 18, 36, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --glass-blur: blur(16px);
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', var(--font-primary);
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Glow Effects */
+  --shadow-cyan-glow: 0 0 20px rgba(0, 242, 254, 0.25);
+  --shadow-indigo-glow: 0 0 20px rgba(99, 102, 241, 0.25);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Reset & Global Styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
   height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -26,24 +66,74 @@ body {
   flex-direction: column;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0, 242, 254, 0.05) 0%, transparent 40%);
+  background-attachment: fixed;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: var(--transition-fast);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Utility Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.05);
   }
 }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Glassmorphism Card Utility */
+.glassCard {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+  transition: var(--transition-smooth);
+}
+
+.glassCard:hover {
+  border-color: var(--border-color-hover);
+}
+

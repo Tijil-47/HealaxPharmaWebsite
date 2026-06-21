@@ -1,0 +1,430 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, rgba(99, 102, 241, 0.05) 50%, transparent 100%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulseGlow 10s infinite ease-in-out;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary-cyan);
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-cyan);
+  border-radius: 50%;
+  box-shadow: var(--shadow-cyan-glow);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  z-index: 1;
+}
+
+.accentText {
+  background: var(--gradient-accent-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--foreground-muted);
+  max-width: 700px;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  z-index: 1;
+}
+
+.ctas {
+  display: flex;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+.primaryCta {
+  background: var(--gradient-healing);
+  color: #030712;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.25);
+  transition: var(--transition-fast);
+}
+
+.primaryCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 242, 254, 0.45);
+}
+
+.secondaryCta {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition-fast);
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-color-hover);
+}
+
+/* Stats Section */
+.statsContainer {
+  width: 100%;
+  max-width: 1200px;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .statsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .statsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.statNumber {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  background: var(--gradient-healing);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--foreground-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Interactive Categories */
+.categoriesSection {
+  width: 100%;
+  max-width: 1200px;
+  padding: 6rem 2rem;
+  z-index: 1;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sectionSubtitle {
+  color: var(--foreground-muted);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.tabBtn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  color: var(--foreground-muted);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.tabBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--foreground);
+}
+
+.activeTabBtn {
+  background: var(--gradient-healing);
+  color: #030712;
+  border-color: transparent;
+  box-shadow: var(--shadow-cyan-glow);
+}
+
+.activeTabBtn:hover {
+  color: #030712;
+}
+
+.tabContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 3rem;
+  min-height: 400px;
+}
+
+@media (max-width: 900px) {
+  .tabContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+.tabTextSide {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tabTitle {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.tabDesc {
+  color: var(--foreground-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.featureList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--foreground);
+}
+
+.featureIcon {
+  color: var(--primary-emerald);
+}
+
+.tabVisualSide {
+  height: 320px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(0, 242, 254, 0.05) 0%, transparent 70%);
+}
+
+.visualGrid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.moleculeStructure {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  animation: float 6s infinite ease-in-out;
+}
+
+.moleculeCore {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gradient-healing);
+  box-shadow: var(--shadow-cyan-glow);
+}
+
+.moleculeNode {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--gradient-science);
+  box-shadow: var(--shadow-indigo-glow);
+}
+
+.node1 { top: 10%; left: 20%; }
+.node2 { top: 20%; right: 10%; }
+.node3 { bottom: 15%; left: 30%; }
+.node4 { bottom: 25%; right: 15%; }
+
+.moleculeBond {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* R&D Spotlight */
+.spotlightSection {
+  width: 100%;
+  max-width: 1200px;
+  padding: 6rem 2rem 8rem;
+  z-index: 1;
+}
+
+.spotlightCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 4rem;
+}
+
+@media (max-width: 900px) {
+  .spotlightCard {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+}
+
+.spotlightTextSide {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.spotlightTitle {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.pipelineTag {
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #030712;
+  background: var(--gradient-science);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.spotlightDesc {
+  color: var(--foreground-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.spotlightStats {
+  display: flex;
+  gap: 3rem;
+}
+
+.spotlightStatItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.spotlightStatVal {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.spotlightStatLbl {
+  font-size: 0.85rem;
+  color: var(--foreground-muted);
+}

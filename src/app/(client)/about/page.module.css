@@ -1,0 +1,180 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: var(--foreground-muted);
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Mission & Vision grid */
+.missionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .missionGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.missionCard {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cardIcon {
+  color: var(--primary-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.cardText {
+  color: var(--foreground-muted);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Regulatory Compliance section */
+.complianceSection {
+  margin-bottom: 6rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.complianceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .complianceGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.complianceCard {
+  padding: 2rem;
+  border-left: 3px solid var(--accent-indigo);
+}
+
+.complianceTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.complianceText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--foreground-muted);
+}
+
+/* Leadership section */
+.leadershipGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+@media (max-width: 900px) {
+  .leadershipGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .leadershipGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.memberCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.memberAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--gradient-science);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-indigo-glow);
+}
+
+.memberName {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.25rem;
+}
+
+.memberRole {
+  font-size: 0.85rem;
+  color: var(--primary-cyan);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.memberBio {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--foreground-muted);
+}

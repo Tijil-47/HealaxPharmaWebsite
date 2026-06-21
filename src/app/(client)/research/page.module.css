@@ -1,0 +1,185 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: var(--foreground-muted);
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Pipeline Container */
+.pipelineSection {
+  margin-bottom: 6rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pipelineList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pipelineItem {
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .pipelineItem {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+.itemMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.itemCode {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.itemType {
+  font-size: 0.85rem;
+  color: var(--foreground-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.itemTarget {
+  font-size: 0.95rem;
+  color: var(--primary-cyan);
+}
+
+.progressCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.phaseName {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.phasePercent {
+  color: var(--foreground-muted);
+}
+
+.progressBarBg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: var(--gradient-healing);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-cyan-glow);
+}
+
+.statusCol {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .statusCol {
+    justify-content: flex-start;
+  }
+}
+
+.statusBadge {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--primary-emerald);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Methodologies Section */
+.methodologiesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .methodologiesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.methodCard {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.methodTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.methodDesc {
+  color: var(--foreground-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
